@@ -1,4 +1,4 @@
-package com.example.Dao;
+package com.example.demo.Dao;
 
 import java.util.List;
 
@@ -8,7 +8,8 @@ import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
-import com.example.entity.Traniee;
+
+import com.example.demo.entity.Traniee;
 
 @Transactional
 @Repository
@@ -16,6 +17,13 @@ public class TranieeDaoImp implements TranieeDao {
 	
 	@PersistenceContext
 	EntityManager em;
+	
+	@Override
+	public String data1()
+	{
+		return "hello";
+			
+	}
 
 	@Override
 	public String create(Traniee t) {

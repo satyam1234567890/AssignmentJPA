@@ -1,9 +1,8 @@
-package com.example.Dao;
+package com.example.demo.Dao;
 
 import java.util.List;
 
-
-import com.example.entity.Traniee;
+import com.example.demo.entity.Traniee;
 
 public interface TranieeDao {
 	public String create(Traniee t);
@@ -16,4 +15,5 @@ public interface TranieeDao {
 
 	public void update(Traniee t);
 	public boolean findID(int id);
+	public String data1();
 }

@@ -1,4 +1,6 @@
-package com.example.entity;
+package com.example.demo.entity;
+
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,11 +45,16 @@ public class Traniee {
 	
 	public Traniee(int id,String name,String city)
 	{
+		super();
 		this.id=id;
 		this.name=name;
 		this.city=city;
 	}
 	
+	public Traniee()
+	{
+		super();
+	}
 	@Override
 	public String toString()
 	{

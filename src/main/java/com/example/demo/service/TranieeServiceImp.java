@@ -1,12 +1,12 @@
-package com.example.service;
+package com.example.demo.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.Dao.TranieeDao;
-import com.example.entity.Traniee;
+import com.example.demo.Dao.TranieeDao;
+import com.example.demo.entity.Traniee;
 
 @Service
 public class TranieeServiceImp implements TranieeService {
@@ -53,6 +53,10 @@ public class TranieeServiceImp implements TranieeService {
 	public void updateData(Traniee t) {
 		tdo.update(t);
 		
+	}
+	public String data()
+	{
+		return tdo.data1();
 	}
 	
 

@@ -1,4 +1,4 @@
-package com.example.Controller;
+package com.example.demo.Controller;
 
 import java.util.List;
 
@@ -14,26 +14,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.entity.Traniee;
-import com.example.service.TranieeService;
+import com.example.demo.entity.Traniee;
+import com.example.demo.service.TranieeService;
 
 @RestController
-@RequestMapping("/traniees")
+//@RequestMapping("/traniees")
 public class TranieeController {
-
+	
 	@Autowired
 	private TranieeService ts;
 	
+	@GetMapping("/")
+	public ResponseEntity<String> hello()
+	{
+		return new ResponseEntity<String>(ts.data(),HttpStatus.OK);	
+	}
+
+	
+	
 	@PostMapping("/traniee") //insert the data to database
-	public ResponseEntity<Traniee> saveBook(@RequestBody Traniee t) {
+	public ResponseEntity<Traniee> saveTraniee(@RequestBody Traniee t) {
+		System.out.print("hefghjkl");
 		Traniee tk=ts.save(t);
 		
-		return new ResponseEntity<Traniee>(tk,HttpStatus.NO_CONTENT);
+		return new ResponseEntity<Traniee>(tk,HttpStatus.OK);
 	}
 	
 	
 	@PutMapping("/updateTraniee/{TarnieeId}")
-	public ResponseEntity<Traniee> updateBook(@PathVariable("TranieeId") int id,@RequestBody Traniee t)
+	public ResponseEntity<Traniee> updateTraniee(@PathVariable("TranieeId") int id,@RequestBody Traniee t)
 	{
 		
 
@@ -48,7 +57,7 @@ public class TranieeController {
 	}
 	
 	@GetMapping("/getTraniee/{TranieeId}")
-    public ResponseEntity<Traniee> getTranieeId
+    public ResponseEntity<Traniee> getTraniee
               (@PathVariable("TranieeId") int id) {
 		
 		if(ts.existsById(id)) {
@@ -57,9 +66,9 @@ public class TranieeController {
 		}
 		return new ResponseEntity<Traniee>(HttpStatus.NOT_FOUND);
 	}
-	@DeleteMapping("/deleteTraniee/{tranieeId}")
+	@DeleteMapping("/deleteTraniee/{TranieeId}")
     public ResponseEntity<Traniee> deleteTranieeId
-              (@PathVariable("bookId") int id) {
+              (@PathVariable("TranieeId") int id) {
 		if(ts.existsById(id))
 		{
 			ts.deleteById(id);

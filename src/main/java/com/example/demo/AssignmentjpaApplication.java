@@ -1,28 +1,29 @@
 package com.example.demo;
 
-import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.Dao.TranieeDao;
-import com.example.entity.Traniee;
+import com.example.demo.Dao.TranieeDao;
+import com.example.demo.entity.Traniee;
 
 
 
 @SpringBootApplication
-public class AssignmentjpaApplication implements CommandLineRunner {
+public class AssignmentjpaApplication  {     //implements CommandLineRunner
 
-	@Autowired
+/*
+    @Autowired
 	TranieeDao tdo;
-	
+	*/
 	public static void main(String[] args) {
 		SpringApplication.run(AssignmentjpaApplication.class, args);
 	}
 	
-	@Override
+	/*@Override
 	public void run(String arg[]) throws Exception {
 		
 		
@@ -35,7 +36,7 @@ public class AssignmentjpaApplication implements CommandLineRunner {
 		  
 		 
 		
-	}
+	}*/
 	
 
 
